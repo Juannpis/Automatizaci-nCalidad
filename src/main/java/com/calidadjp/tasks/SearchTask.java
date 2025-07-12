@@ -11,14 +11,16 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class SearchTask implements Task {
 
+    public static final String NOMBRE_CANCION = "Cosas que no te dije";
+
     @Override
     public <T extends Actor> void performAs(T actor) {
+        actor.remember("song", NOMBRE_CANCION);
 
         actor.attemptsTo(
                 Click.on(SEARCH_INPUT),
-                Enter.theValue("cosas que no te dije").into(SEARCH_INPUT).thenHit(Keys.ENTER)
+                Enter.theValue(NOMBRE_CANCION).into(SEARCH_INPUT).thenHit(Keys.ENTER)
         );
-
     }
 
     public static SearchTask searchSong() {

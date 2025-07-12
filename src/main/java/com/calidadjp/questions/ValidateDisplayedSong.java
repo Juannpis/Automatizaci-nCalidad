@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.Actor;
 
 import static com.calidadjp.ui.SongTitleUI.LBL_NAME_SONG;
 
-public class ValidateSong implements Question<Boolean>{
+public class ValidateDisplayedSong implements Question<Boolean>{
 
 
     @Override
@@ -14,17 +14,14 @@ public class ValidateSong implements Question<Boolean>{
 
         WebElementFacade elementTitle = LBL_NAME_SONG.resolveFor(actor);
 
-        String title = String.valueOf(elementTitle.isDisplayed());
-
+        String title = elementTitle.getText();
         String titleSong = actor.recall("song");
-
-
         return titleSong.isEmpty();
 
     }
 
     public static Question<Boolean> assertion(){
-        return new ValidateSong();
+        return new ValidateDisplayedSong();
     }
 
 }

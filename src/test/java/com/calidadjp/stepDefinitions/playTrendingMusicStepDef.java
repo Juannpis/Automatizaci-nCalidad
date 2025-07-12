@@ -1,11 +1,10 @@
 package com.calidadjp.stepDefinitions;
 
-import com.calidadjp.questions.ValidateSong;
+import com.calidadjp.questions.ValidateDisplayedSong;
 import com.calidadjp.tasks.SelectFirstSongTask;
 import com.calidadjp.tasks.SelectMusicTask;
 import com.calidadjp.tasks.SelectTrendingTask;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.hamcrest.Matchers;
 
@@ -35,7 +34,7 @@ public class playTrendingMusicStepDef {
     @And("el usuario debe ver el título de la canción reproducida")
     public void elUsuarioDebeVerElTituloDeLaCancionReproducida() {
         theActorInTheSpotlight().should(
-                seeThat("La respuesta es: ", ValidateSong.assertion(), Matchers.equalTo(false))
+                seeThat("La respuesta es: ", ValidateDisplayedSong.assertion(), Matchers.equalTo(false))
         );
     }
 
