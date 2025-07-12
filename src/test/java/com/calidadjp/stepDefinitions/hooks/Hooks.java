@@ -12,6 +12,13 @@ public class Hooks {
 
     WebDriver driver;
 
+    @Before
+    public void setUp() {
+        WebDriverManager.chromedriver().clearDriverCache().setup();
+        setTheStage(new OnlineCast());
+    }
+
+
     @After
     public void tearDown(){
         if (driver != null){
@@ -19,10 +26,6 @@ public class Hooks {
         }
     }
 
-    @Before
-    public void setUp() {
-        WebDriverManager.chromedriver().clearDriverCache().setup();
-        setTheStage(new OnlineCast());
-    }
+
 
 }

@@ -8,7 +8,6 @@ public class TrendingUI {
     public static Target BTN_TRENDING = Target.the("button trending")
             .located(
                     By.xpath(
-                            // Anchor que contiene el texto “Trending”
                             "//a[.//yt-formatted-string[normalize-space()='Tendencias']]"
                     )
             );
