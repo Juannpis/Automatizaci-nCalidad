@@ -18,6 +18,7 @@ public class SelectLastSong implements Interaction {
         WebElementFacade lastSong = listSong.get(listSong.size()-1);
         String nameSong = lastSong.getText();
         actor.remember("song", nameSong);
+        System.out.print(listSong.size()-1);
         lastSong.click();
 
     }
