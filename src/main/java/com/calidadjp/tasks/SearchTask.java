@@ -11,7 +11,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class SearchTask implements Task {
 
-    public static final String NOMBRE_CANCION = "Cosas que no te dije";
+    public static final String NOMBRE_CANCION = "Beéle, Ozuna, Ryan Castro, Kapo - Como Las Olas";
 
     @Override
     public <T extends Actor> void performAs(T actor) {
